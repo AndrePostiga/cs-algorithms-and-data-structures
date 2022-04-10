@@ -15,6 +15,11 @@ Tree *BinaryTreeInit(void *data, int typeSizeOfData);
 int BinaryTreeGetData(Tree *tree, void *memoryAddress);
 void BinaryTreePrintTree(Tree *root, int tabSize, char *pattern);
 
+// Exercício 1 do slide, Verificar se a árvore binária é cheia ou não
+// Condição para ser cheia: Ter 0 ou 2 filhos
+int CheckFullTree_rec(Tree *root);
+int CheckFullTree(Tree *root);
+
 // int BinaryTreeCountNodes(Node *root);
 // int BinaryTreeCountLeafes(Node *root);
 // void BinaryTreeDepthFirstTraversal(Node *root);

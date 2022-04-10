@@ -1,6 +1,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "BinaryTree.h"
+#include "Queue.h"
 
 #define true 1
 #define false 0
@@ -72,5 +73,42 @@ void BinaryTreePrintTree(Tree *root, int tabSize, char *pattern)
     else
     {
         printf("NULL");
+    }
+}
+
+int CheckFullTree_rec(Tree *root)
+{
+    if (root == NULL)
+        return true;
+
+    if (root->left == NULL && root->right == NULL)
+        return true;
+
+    if (root->left != NULL && root->right != NULL)
+        return CheckFullTree(root->left) && CheckFullTree(root->right);
+
+    return false;
+}
+
+int CheckFullTree(Tree *root)
+{
+    if (root == NULL)
+        return true;
+
+    Queue *queue = QueueInit(root->typeSizeOf);
+
+    while (QueueIsEmpty(queue) == false)
+    {
+        Tree *newRoot;
+        Dequeue(queue, newRoot);
+
+        if (newRoot->left == NULL && newRoot->right == NULL)
+            continue;
+
+        if (newRoot->left == NULL || newRoot->right == NULL)
+            return false;
+
+        Enqueue(queue, root->left);
+        Enqueue(queue, root->right);
     }
 }
