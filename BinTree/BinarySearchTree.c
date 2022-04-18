@@ -92,7 +92,8 @@ BinarySearchTree *BinarySearchTreeFindKey(BinarySearchTree *tree, int key, Binar
         if (key == tree->key)
             return tree;
 
-        *parent = tree;
+        if (parent != NULL)
+            *parent = tree;
 
         if (key < tree->key)
             tree = tree->left;
