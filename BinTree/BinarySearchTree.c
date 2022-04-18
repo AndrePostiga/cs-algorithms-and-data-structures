@@ -6,9 +6,6 @@
 #define true 1
 #define false 0
 
-BinarySearchTree *BinarySearchTreeRemoveKey(BinarySearchTree *tree, int key);
-int BinarySearchTreeGetData(BinarySearchTree *tree, void *memoryAddress);
-
 BinarySearchTree *BinarySearchTreeInit(int key, void *data, int typeSizeOfData)
 {
     BinarySearchTree *newNode = (BinarySearchTree *)malloc(sizeof(BinarySearchTree));
