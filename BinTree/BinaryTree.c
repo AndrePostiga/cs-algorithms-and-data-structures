@@ -1,5 +1,6 @@
 #include "stdlib.h"
 #include "stdio.h"
+#include "string.h"
 #include "BinaryTree.h"
 #include "Queue.h"
 
@@ -99,7 +100,7 @@ int CheckFullTree(Tree *root)
 
     while (QueueIsEmpty(queue) == false)
     {
-        Tree *newRoot;
+        Tree *newRoot = NULL;
         Dequeue(queue, newRoot);
 
         if (newRoot->left == NULL && newRoot->right == NULL)
@@ -111,4 +112,6 @@ int CheckFullTree(Tree *root)
         Enqueue(queue, root->left);
         Enqueue(queue, root->right);
     }
+
+    return 0;
 }
