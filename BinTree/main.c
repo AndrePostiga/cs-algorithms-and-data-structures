@@ -16,6 +16,7 @@ int main()
     BinarySearchInsertNode_rec(root, 5, &a, sizeof(char *));
     BinarySearchInsertNode_rec(root, 1, &c, sizeof(char *));
     BinarySearchInsertNode_rec(root, 15, &b, sizeof(char *));
+    BinarySearchInsertNode_rec(root, 16, &b, sizeof(char *));
     BinarySearchInsertNode_rec(root, 7, &c, sizeof(char *));
 
     BinarySearchTreePrintTree(root, 0, "%s\n");
@@ -23,10 +24,10 @@ int main()
     BinarySearchTree *foundedKey = BinarySearchTreeFindKey_rec(root, 20, NULL);
     printf("\n\n\n");
     BinarySearchTreePrintTree(foundedKey, 0, "%s\n");
-    // char *myString = NULL;
-    // BinarySearchTreeGetData(foundedKey, &myString);
-    // printf("\n\n\n");
-    // printf("%s \n", myString);
+    char *myString = NULL;
+    BinarySearchTreeGetData(foundedKey, &myString);
+    printf("\n\n\n");
+    printf("%s \n", myString);
 
     // Primeiro caso de remoção
     printf("\n\n\n");

@@ -114,7 +114,8 @@ BinarySearchTree *BinarySearchTreeFindKey_rec(BinarySearchTree *tree, int key, B
     if (key == tree->key)
         return tree;
 
-    *parent = tree;
+    if (parent != NULL)
+        *parent = tree;
 
     if (key < tree->key)
         return BinarySearchTreeFindKey_rec(tree->left, key, parent);
@@ -234,10 +235,14 @@ BinarySearchTree *BinarySearchTreeRemoveKey(BinarySearchTree *tree, int key)
     if (nodeToBeRemoved->left != NULL && nodeToBeRemoved->right != NULL)
     {
         BinarySearchTree *temp = nodeToBeRemoved;
+        BinarySearchTree *tempParent = nodeToBeRemoved;
 
         temp = temp->left;
         while (temp->right != NULL)
+        {
+            tempParent = temp;
             temp = temp->right;
+        }
 
         if (temp->key == nodeToBeRemoved->left->key)
         {
@@ -249,7 +254,7 @@ BinarySearchTree *BinarySearchTreeRemoveKey(BinarySearchTree *tree, int key)
         nodeToBeRemoved->data = temp->data;
         nodeToBeRemoved->typeSizeOf = temp->typeSizeOf;
         free(temp);
-        nodeToBeRemoved->left->right = NULL;
+        tempParent->right = NULL;
         return tree;
     }
 
