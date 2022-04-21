@@ -21,5 +21,7 @@ BinarySearchTree *BinarySearchInsertNode_rec(BinarySearchTree *tree, int key, vo
 BinarySearchTree *BinarySearchTreeFindKey(BinarySearchTree *tree, int key, BinarySearchTree **parent);
 BinarySearchTree *BinarySearchTreeFindKey_rec(BinarySearchTree *tree, int key, BinarySearchTree **parent);
 BinarySearchTree *BinarySearchTreeRemoveKey(BinarySearchTree *tree, int key);
+BinarySearchTree *BinarySearchTreeRemoveKey_rec(BinarySearchTree *tree, int key);
 int BinarySearchTreeGetData(BinarySearchTree *tree, void *memoryAddress);
 void BinarySearchTreePrintTree(BinarySearchTree *root, int tabSize, char *pattern);
+void PrintTreeGraphicaly(BinarySearchTree *t);
