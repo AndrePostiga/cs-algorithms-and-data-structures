@@ -14,6 +14,7 @@ typedef struct tree
 Tree *BinaryTreeInit(void *data, int typeSizeOfData);
 int BinaryTreeGetData(Tree *tree, void *memoryAddress);
 void BinaryTreePrintTree(Tree *root, int tabSize, char *pattern);
+int BinaryTreeHeight(Tree *root);
 
 // Exercício 1 do slide, Verificar se a árvore binária é cheia ou não
 // Condição para ser cheia: Ter 0 ou 2 filhos
@@ -27,4 +28,3 @@ int CheckFullTree(Tree *root);
 // void BinaryTreePreOrderTraversal(Node *root);
 // void BinaryTreePostOrderTraversal(Node *root);
 // void BinaryTreeInOrderTraversal(Node *root);
-// int BinaryTreeHeight(Node *root);

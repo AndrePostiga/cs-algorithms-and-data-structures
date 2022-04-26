@@ -115,3 +115,17 @@ int CheckFullTree(Tree *root)
 
     return 0;
 }
+
+int BinaryTreeHeight(Tree *root)
+{
+    if (root == NULL)
+    {
+        return -1;
+    }
+    else
+    {
+        int leftHeight = BinaryTreeHeight(root->left);
+        int rightHeight = BinaryTreeHeight(root->right);
+        return (leftHeight > rightHeight) ? (leftHeight + 1) : (rightHeight + 1);
+    }
+}
